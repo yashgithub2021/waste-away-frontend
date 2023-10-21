@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="sidebar">
+        <div class="logo">
+            <div><img
+                    src="https://imgs.search.brave.com/MwMrphIYiko5NV4KNgzhPrDj-5HtwHSkTjxn64L8x2k/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/NDgwNzQzOS9waG90/by9mYW1pbHktc29y/dGluZy1vdXQtd2Fz/dGUtZm9yLXJlY3lj/bGluZy5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9M1RBanR5/WTd3MGprX0pYd3dH/LTFscVJJeTlsYmxv/SkEyNTBTbDZHaGdV/dz0"
+                    alt="Logo" height="150" width="300"></div>
+        </div>
+        <div class="links">
+            <div>
+                <ul>
+                    <li routerLink="">Home</li>
+                    <li routerLink="orders">Orders</li>
+                    <li routerLink="price">Price List</li>
+                    <li routerLink="">Wallet</li>
+                    <li routerLink="address">Address</li>
+                    <li routerLink="schedule">Schedule</li>
+                    <li routerLink="profile">Profile</li>
+                    <li class="logout"><i class="fa fa-sign-out"></i>
+                        Logout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="image-slider">
+            <!-- Image slider content goes here -->
+        </div>
+        <div class="router-outlet">
+            <router-outlet></router-outlet> <!-- This is where your content will be displayed -->
+        </div>
+    </div>
+</div>

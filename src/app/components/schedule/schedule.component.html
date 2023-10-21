@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="group">
+        <div class="section sec1">
+            <i (click)="goback()" class="fa fa-long-arrow-left"></i>
+        </div>
+        <div class="section sec2">
+            <div class="contents">
+                <div class="content c1">
+                    <div routerLink="/address" class="change-address" style="font-size: 22px;">
+                        <div class="label">
+                            <span>Change Pickup Address</span>
+
+                        </div>
+                        <div class="arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content c2" style="font-size: 16px; font-weight:bold">
+                    <div class="default-address">
+                        <span>Laxmi Township - 1, C/104, Kalas, Vishrantwadi, Pune-411015</span>
+                    </div>
+                </div>
+                <div class="content c3">
+                    <div class="slot">
+                        <div class="date">
+                            <div class="icon">
+                                <!-- <img src="../../../assets/icons8-schedule-64.png" alt=""> -->
+                                <input class="input" [(ngModel)]="selectedDate" type="date">
+                            </div>
+                            <div class="text">
+                                <span>Select Pickup Time</span>
+                                <span *ngIf="selectedDate !== ''">{{selectedDate}}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="button">
+                            <div>
+                                <button class="btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

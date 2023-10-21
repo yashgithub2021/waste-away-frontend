@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="content" [ngSwitch]="wasteType">
+        <div class="horizontal">
+            <div (click)="showPaper()" [ngClass]="wasteType == 'paper' ? 'colorsec' :'section'">
+                <span>
+                    Paper
+                </span>
+            </div>
+            <div (click)="showPlastic()" [ngClass]="wasteType == 'plastic' ? 'colorsec' :'section'">
+                <span>
+                    Plastic
+                </span>
+            </div>
+            <div class="section" [ngClass]="wasteType == 'ewaste' ? 'colorsec' :'section'">
+                <span>
+                    E-Waste
+                </span>
+            </div>
+            <div class="section" [ngClass]="wasteType == 'steel' ? 'colorsec' :'section'">
+                <span>
+                    Steel
+                </span>
+            </div>
+            <div class="section" [ngClass]="wasteType == 'clothes' ? 'colorsec' :'section'">
+                <span>
+                    Clothes
+                </span>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="'paper'" class="paperprices">
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/newspapers.webp" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>News Paper</span><br>
+                    <span>Rs 15/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/whitepaper.jpeg" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>White Paper</span><br>
+                    <span>Rs 6/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/mix paper.jpeg" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>Mix Paper</span><br>
+                    <span>Rs 3/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/carton.webp" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>Catron</span><br>
+                    <span>Rs 6/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/books.webp" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>Books</span><br>
+                    <span>Rs 7/- Per Kg</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ==================================Paper Section Over==========================================================================         -->
+
+        <div *ngSwitchCase="'plastic'" class="plasticprices">
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/newspapers.webp" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>News Paper</span><br>
+                    <span>Rs 15/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/whitepaper.jpeg" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>White Paper</span><br>
+                    <span>Rs 6/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/mix paper.jpeg" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>Mix Paper</span><br>
+                    <span>Rs 3/- Per Kg</span>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img height="120" width="200" src="../../../assets/carton.webp" alt="">
+                </div>
+                <div class="name" style="text-align: center;">
+                    <span>Catron</span><br>
+                    <span>Rs 6/- Per Kg</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
