@@ -1,1 +1,80 @@
-<p>address works!</p>
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Change Address</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute text-center">
+            <div class="md-7" style="
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            padding: 0px 60px;
+        ">
+                <div style="
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0px 60px;
+            " class="contact-wrap w-100 p-md-5 p-4">
+                    <div id="form-message-warning" class="mb-4"></div>
+                    <div id="form-message-success" class="mb-4">
+                        Your message was sent, thank you!
+                    </div>
+                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="label" for="building">Building Name</label>
+                                    <input [(ngModel)]="building" type="text" class="form-control" name="Building"
+                                        id="Building" placeholder="Ex. Township">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="flat">Flat No.</label>
+                                    <input [(ngModel)]="flat" type="text" class="form-control" name="flat" id="flat"
+                                        placeholder="Ex. A/201">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="subject">Area</label>
+                                    <input [(ngModel)]="area" type="text" class="form-control" name="area" id="area"
+                                        placeholder="Ex. Kothrud">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="locality">Locality</label>
+                                    <input [(ngModel)]="locality" type="text" class="form-control" name="locality"
+                                        id="locality" placeholder="Ex. Paud Road">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="city">City</label>
+                                    <input [(ngModel)]="city" type="text" class="form-control" name="city" id="city"
+                                        placeholder="Ex. Pune">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="label" for="pincode">Pin Code</label>
+                                    <input [(ngModel)]="pincode" type="phone" class="form-control" name="pincode"
+                                        id="pincode" placeholder="Ex. 418233">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-5">
+                                <div (click)="updateAddr()" class="form-group">
+                                    <input type="submit" value="Update" class="btn">
+                                    <div class="submitting"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

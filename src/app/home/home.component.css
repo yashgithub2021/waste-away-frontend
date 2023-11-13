@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: rgb(22, 202, 202);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.logo {
+    /* flex: 1; */
+    max-width: 350px;
+    font-size: x-large;
+}
+
+.links {
+    /* flex: 4; */
+    /* margin-top: 40px; */
+}
+
+ul {
+    padding: 0px;
+}
+
+ul>li {
+    padding: 18px 0px;
+    font-size: x-large;
+    text-decoration: none;
+    list-style: none;
+    width: 350px;
+}
+
+ul>li:hover {
+    background-color: rgb(19, 168, 168);
+    cursor: pointer;
+}
+
+.logout {
+    /* margin-top: 60px; */
+}
+
+.content {
+    flex-grow: 1;
+    /* padding: 20px; */
+    background-color: rgb(22, 202, 202);
+}
+
+.image-slider {
+    height: 70px;
+    background-color: rgb(22, 202, 202);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
+    /* Adjust the height as needed */
+    /* Add styles for your image slider here */
+}
+
+.username {
+    /* border: 1px solid black; */
+    height: 73px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.router-outlet {
+    height: 642px;
+    background-color: white;
+}

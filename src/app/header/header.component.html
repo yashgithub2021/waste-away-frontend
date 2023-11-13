@@ -1,0 +1,18 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <button mat-icon-button (click)="toggleSidebar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="row mr-2 ml-auto">
+            <ul class="row m-0 align-items-center">
+                <li>
+                    <button class="user mt-2 d-flex align-items-center">
+                        <img style="margin: 0px 10px; height:50px" src="../../assets/icons8-person-100.png" alt="">
+                        {{username}}
+                    </button>
+
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

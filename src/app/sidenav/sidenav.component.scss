@@ -1,0 +1,95 @@
+:host {
+  .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 73vh;
+}
+
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+
+  img {
+    width: 200px;
+  }
+}
+
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+  margin-bottom: 50px;
+}
+
+.mdc-list-item {
+  color: #94a3b8 !important;
+  font-size: 0.8rem;
+  height: 44px !important;
+  margin-bottom: 4px;
+
+  &:hover {
+    color: #f2f5f7 !important;
+  }
+
+  ::ng-deep {
+    .mdc-list-item__content {
+      border-radius: 5px;
+      margin: 0 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 16px;
+      position: relative;
+      height: inherit;
+
+      &:hover {
+        background: #2c3344 !important;
+      }
+    }
+  }
+}
+
+.mdc-list-item__primary-text {
+  color: white;
+}
+
+.list-item-active {
+  // background: blue !important;
+  // border-radius: 0 2rem 2rem 0;
+  // &:hover {
+  //   background: blue;
+  // }
+
+  color: #f2f5f7 !important;
+
+  ::ng-deep {
+    .mdc-list-item__content {
+      background: #2c3344 !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 16px;
+      position: relative;
+      height: inherit;
+
+      &:hover {
+        background: #2c3344 !important;
+      }
+    }
+  }
+}
+
+.mat-subheader {
+  color: #818cf8;
+  font-size: 0.6rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}

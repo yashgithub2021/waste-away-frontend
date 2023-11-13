@@ -6,14 +6,15 @@ import { PricelistComponent } from './components/pricelist/pricelist.component';
 import { AddressComponent } from './components/address/address.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'schedule', component: ScheduleComponent },
-  { path: 'price', component: PricelistComponent },
-  { path: 'address', component: AddressComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'components', loadChildren: () => import('./components/components.module').then((m) => m.ComponentsModule), canActivate: [authGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: RegisterComponent },
+  { path: '', redirectTo: 'components', pathMatch: 'full' }
 ];
 
 @NgModule({

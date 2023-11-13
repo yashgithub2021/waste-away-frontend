@@ -1,0 +1,380 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.group {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.sec1 {
+    width: 50px;
+}
+
+.fa-long-arrow-left {
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+.fa-long-arrow-right {
+    font-size: 30px;
+}
+
+.change-address {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 90%;
+    width: 100%;
+}
+
+.slot {
+    padding: 0px 20px;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.slot2 {
+    padding: 0px 20px;
+    display: flex;
+    // flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.label,
+.default-address {
+    width: 85%;
+    border-radius: 10px;
+    background-color: #1e293b;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 70px;
+    font-size: 22px;
+    margin: 5px;
+}
+
+.label {
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+.text {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    width: auto;
+    height: 90%;
+    flex-direction: column;
+}
+
+
+.c3 {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60%;
+    flex-direction: column;
+}
+
+.date {
+    // width: 66%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.time {
+
+    // width: 66%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul>div {
+    color: #fff;
+    border: 1px solid #1e293b;
+    background-color: #1e293b;
+    border-radius: 10px;
+    text-align: center;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0px;
+    width: 180px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.result {
+    font-size: 22px
+}
+
+.button {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: 90%;
+}
+
+
+.btn {
+    font-size: 23px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: #fff;
+    border-style: none;
+    margin: 0px 10px;
+}
+
+.red {
+    background-color: #1e293b;
+}
+
+.green {
+    background-color: #1e293b;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.time-popup {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.selected-date-time {
+    margin-top: 20px;
+}
+
+
+input[type=date] {
+    border-style: none;
+    width: 65px;
+    outline: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    background: url(../../../assets/icons8-schedule-64.png);
+    height: 65px;
+    width: 200px;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+    cursor: pointer;
+
+}
+
+/* Media query for screens with a maximum width of 275px (e.g., smartphones) */
+@media (max-width: 375px) {
+
+    .label,
+    .default-address {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+        height: 50px;
+        /* Adjust height for smaller screens */
+        width: 100%;
+
+    }
+
+    .text {
+        font-size: 13px;
+    }
+
+    input[type=date] {
+        transform: scale(0.7);
+    }
+
+
+    .btn {
+        font-size: 15px;
+        height: 30px;
+        width: 100px;
+    }
+
+    ul>div {
+        padding: 5px;
+        margin: 5px 0px;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .result {
+        font-size: 15px;
+    }
+}
+
+
+
+/* Media query for screens with a maximum width of 768px (e.g., smartphones) */
+@media (min-width: 375px) and (max-width: 768px) {
+
+    .label,
+    .default-address {
+        font-size: 15px;
+        /* Adjust font size for smaller screens */
+        height: 70px;
+        /* Adjust height for smaller screens */
+        width: 100%;
+
+    }
+
+    .text {
+        font-size: 17px;
+    }
+
+    input[type=date] {
+        transform: scale(0.7);
+    }
+
+    .btn {
+        font-size: 18px;
+        height: 40px;
+        width: 125px;
+    }
+
+    ul>div {
+        padding: 10px;
+        margin: 5px 0px;
+        width: 140px;
+        font-size: 15px;
+    }
+
+    .result {
+        font-size: 15px;
+    }
+
+}
+
+/* Media query for screens with a width between 769px and 1024px (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .label,
+    .default-address {
+        font-size: 20px;
+        /* Adjust font size for medium-sized screens */
+        height: 70px;
+        /* Adjust height for medium-sized screens */
+        width: 100%;
+
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    input[type=date] {
+        transform: scale(0.9);
+    }
+
+
+    .btn {
+        font-size: 20px;
+        height: 40px;
+        width: 135px;
+    }
+
+}
+
+/* Media query for screens with a width of 1025px or larger (e.g., desktops) */
+
+
+
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+
+    &__box {
+        min-height: 120px;
+        background: #1e293b;
+        margin: 0 -1rem;
+        font-size: 36px;
+    }
+
+    &__content {
+        min-height: calc(100vh - 178px);
+        border-radius: 10px;
+        margin-top: -2rem;
+        background: white;
+        color: black;
+        font-size: 2rem;
+
+        &-data {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="sidebar" *ngIf="_route.url != '/login' && _route.url != '/signup'">
+        <div class="logo">
+            <div><img src="../../../assets/logo.png" alt="Logo" height="100" width="300"></div>
+        </div>
+        <div class="links">
+            <div>
+                <ul>
+                    <li routerLink="/home">Home</li>
+                    <li routerLink="/home/orders">Orders</li>
+                    <li routerLink="/home/price">Price List</li>
+                    <li>Wallet</li>
+                    <li routerLink="/home/address">Address</li>
+                    <li routerLink="/home/schedule">Schedule</li>
+                    <li routerLink="/home/profile">Profile</li>
+                    <li (click)="logout()" class="logout"><i class="fa fa-sign-out"></i>
+                        Logout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="image-slider" *ngIf="_route.url != '/login' && _route.url != '/signup'">
+            <div class="username">
+                <div class="user icon">
+                    <label for="email"><i style="color: white; font-size:xxx-large"
+                            class="zmdi zmdi-account-circle"></i></label>
+                </div>
+                <div class="user name">
+                    <label for="" style="color: white; font-size:x-large; font-weight:bolder">Welcome
+                        {{username}}</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="router-outlet">
+            <router-outlet></router-outlet> <!-- This is where your content will be displayed -->
+        </div>
+    </div>
+</div>

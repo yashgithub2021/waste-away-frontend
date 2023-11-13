@@ -1,1 +1,11 @@
-<app-home></app-home>
+<mat-drawer-container>
+    <mat-drawer *ngIf="_route.url != '/login' && _route.url != '/signup'" mode="side" [opened]="sideBarOpen">
+        <!-- <mat-drawer mode="side" opened="true"> -->
+        <app-sidenav *ngIf="_route.url != '/login' && _route.url != '/signup'"></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header *ngIf="_route.url != '/login' && _route.url != '/signup'"
+            (toggleSidebarForMe)="sideBarToggler()"></app-header>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

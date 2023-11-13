@@ -1,0 +1,163 @@
+.container {
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content {
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.horizontal,
+.paperprices,
+.plasticprices,
+.eprices,
+.steelprices,
+.clothesprices {
+    /* border: 1px solid black; */
+    width: 95%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn {
+    display: flex;
+    box-shadow: 0px 0px 5px #888888;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    display: flex;
+    box-shadow: 0px 0px 5px rgb(30 41 59);
+    background-color: rgb(30 41 59);
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.section {
+    display: flex;
+    box-shadow: 0px 0px 5px #888888;
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.section:hover {
+    display: flex;
+    box-shadow: 0px 0px 5px rgb(30 41 59);
+    border: 1px solid rgb(30 41 59);
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.colorsec {
+    display: flex;
+    box-shadow: 0px 0px 5px rgb(30 41 59);
+    border: 1px solid rgb(30 41 59);
+    background-color: rgb(30 41 59);
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.paperprices,
+.plasticprices,
+.eprices,
+.steelprices,
+.clothesprices {
+    height: 90%;
+    display: grid;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+.box {
+    /* border: 1px solid black; */
+    width: 200px;
+    height: 180px;
+    box-shadow: 0px 5px 10px #888888;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+img {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+
+    &__box {
+        min-height: 120px;
+        background: #1e293b;
+        margin: 0 -1rem;
+        font-size: 36px;
+    }
+
+    &__content {
+        min-height: calc(100vh - 178px);
+        border-radius: 10px;
+        margin-top: -2rem;
+        background: white;
+        color: black;
+        font-size: 1rem;
+
+        &-data {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
