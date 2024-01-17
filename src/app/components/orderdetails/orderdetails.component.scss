@@ -63,14 +63,22 @@ body {
 .btn {
     background-color: #1e293b;
     color: #fff;
+    margin-left: 20px;
 }
 
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
     height: 100%;
     width: 100%;
+    gap: 45px;
+}
+
+img {
+    position: absolute;
+    left: 50%;
 }
 
 .page {

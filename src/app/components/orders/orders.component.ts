@@ -4,6 +4,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/auth/user.service';
 import { OrderService } from 'src/app/services/orders/order.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orders',
@@ -16,28 +17,58 @@ export class OrdersComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'status', 'date', 'time'];
   ELEMENT_DATA: PeriodicElement[] = [];
-  dataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
+  pendingOrdersDataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
+  completedOrdersDataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
   token: any
-  Orders: any
+  pendingOrders: any
+  completedOrders: any
   loader: boolean = true
+  wasteType: string = 'upcoming'
   ngOnInit(): void {
     this.token = localStorage.getItem('auth-token')
-    this.fetchOrders()
+    this.fetchPendingOrders()
+    this.fetchCompletedOrders()
   }
 
-  //Get Orders of user
-  fetchOrders() {
-    this.order.getOrders().subscribe((res) => {
-      this.Orders = res
+
+  changeSection(section: string) {
+    this.wasteType = section
+  }
+
+  //Get Pending Orders of user
+  fetchPendingOrders() {
+    this.order.getOrders(this.token).subscribe((res: any) => {
+      const sortedOrders = res.filter((order: any) => order.status === 'pending')
+      this.pendingOrders = sortedOrders
       this.loader = false
-      // console.log(this.Orders)
-      this.populateElementData()
+      this.pendingOrdersTable()
+    }, (error: any) => {
+      console.log(error)
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: error.statusText,
+        showConfirmButton: false,
+        timer: 800
+      })
+      this.loader = false
+
     })
   }
 
-  //Order Table
-  populateElementData() {
-    this.ELEMENT_DATA = this.Orders.map((order: any) => {
+  //Get Completed Orders of user
+  fetchCompletedOrders() {
+    this.order.getOrders(this.token).subscribe((res: any) => {
+      const sortedOrders = res.filter((order: any) => order.status === 'Cancelled' || order.status === 'Completed')
+      this.completedOrders = sortedOrders
+      this.loader = false
+      this.completedOrdersTable()
+    })
+  }
+
+  //Pending Orders Table
+  pendingOrdersTable() {
+    this.ELEMENT_DATA = this.pendingOrders.map((order: any) => {
       return {
         id: order._id,
         user: order.user,
@@ -48,7 +79,23 @@ export class OrdersComponent implements OnInit {
         orderdate: order.orderdate
       } as PeriodicElement;
     });
-    this.dataSource.data = this.ELEMENT_DATA
+    this.pendingOrdersDataSource.data = this.ELEMENT_DATA
+  }
+
+  //Completed Orders Table
+  completedOrdersTable() {
+    this.ELEMENT_DATA = this.completedOrders.map((order: any) => {
+      return {
+        id: order._id,
+        user: order.user,
+        address: order.address,
+        date: order.date,
+        time: order.time,
+        status: order.status,
+        orderdate: order.orderdate
+      } as PeriodicElement;
+    });
+    this.completedOrdersDataSource.data = this.ELEMENT_DATA
   }
 
   redirectToDetails(id: number): void {

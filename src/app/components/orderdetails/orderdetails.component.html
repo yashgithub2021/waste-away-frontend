@@ -2,8 +2,13 @@
     <div class="d-flex page__box p-3 mt-2">Order Details</div>
     <div class="page__content shadow p-3 position-relative">
         <div class="page__content-data position-absolute text-center">
-            <div class="container">
-                <img *ngIf="loader" src="../../../assets/icons8-life-cycle.gif" alt="">
+            <div class="container" #content>
+                <img *ngIf="loader" src="../../../assets/icons8-trash.gif" alt="">
+                <div *ngIf="!loader" (click)="goBack()" class="btn ">
+                    <span>
+                        <mat-icon (click)="goBack()">arrow_back</mat-icon>
+                    </span>
+                </div>
                 <div *ngIf="!loader" class="main-body">
                     <div class="row gutters-sm">
                         <div class="md-8">
@@ -55,8 +60,11 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-sm-12" *ngIf="orderDetails?.status == 'pending'">
-                                            <a (click)="cancelPickup()" class="btn">Cancel Pickup</a>
+                                        <div class="col-sm-12">
+                                            <a (click)="cancelPickup()" class="btn"
+                                                *ngIf="orderDetails?.status == 'pending'">Cancel Pickup</a>
+                                            <a (click)="downloadPdf()" class="btn">Download PDF </a>
+                                            <!-- <a class="btn"><mat-icon>share</mat-icon></a> -->
                                         </div>
                                     </div>
                                 </div>

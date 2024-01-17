@@ -95,7 +95,7 @@ export class ScheduleComponent implements OnInit {
     }
     const token = this.token
 
-    this.order.placeorder(body).subscribe((res: any) => {
+    this.order.placeorder(body, token).subscribe((res: any) => {
       // console.log(res)
       if (res.success) {
         this.selectedDate = '';

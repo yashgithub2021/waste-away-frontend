@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/auth/user.service';
 
 @Component({
@@ -6,11 +6,12 @@ import { UserService } from 'src/app/services/auth/user.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
 
   token: any
   name?: String
   email?: String
+  loader: boolean = true
   constructor(private user: UserService) { }
 
   ngOnInit(): void {
@@ -21,8 +22,13 @@ export class ProfileComponent implements OnInit {
   //User Data
   fetchUser() {
     this.user.fetchUsers(this.token).subscribe((res: any) => {
+      this.loader = false
       this.name = res.name
       this.email = res.email
     })
+  }
+
+  ngOnDestroy(): void {
+    this.loader = true
   }
 }

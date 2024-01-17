@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   constructor(public _route: Router) { }
 
   ngOnInit(): void {
-
   }
 
   sideBarToggler() {

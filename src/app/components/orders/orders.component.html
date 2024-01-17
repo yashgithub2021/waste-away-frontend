@@ -2,39 +2,97 @@
     <div class="d-flex page__box p-3 mt-2">Orders</div>
     <div class="page__content shadow p-3 position-relative">
         <div class="page__content-data position-absolute text-center">
-            <section class="example-container mat-elevation-z8" tabindex="0">
+            <section class="example-container mat-elevation-z8" tabindex="0" [ngSwitch]="wasteType">
                 <img style="display: block;position: absolute;top:50%;left:50%" *ngIf="loader"
-                    src="../../../assets/icons8-life-cycle.gif" alt="">
+                    src="../../../assets/icons8-trash.gif" alt="">
 
-                <table *ngIf="!loader" mat-table [dataSource]="dataSource">
+                <div class="horizontal">
+                    <div (click)="changeSection('upcoming')"
+                        [ngClass]="wasteType == 'upcoming' ? 'colorsec' :'section'">
+                        <span class="text">
+                            Upcoming
+                        </span>
+                    </div>
+                    <div (click)="changeSection('completed')"
+                        [ngClass]="wasteType == 'completed' ? 'colorsec' :'section'">
+                        <span>
+                            Completed
+                        </span>
+                    </div>
 
-                    <!-- Id Column -->
-                    <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef> Id </th>
-                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                    </ng-container>
+                </div>
 
-                    <!-- Order Status Column -->
-                    <ng-container matColumnDef="status">
-                        <th mat-header-cell *matHeaderCellDef> Status </th>
-                        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-                    </ng-container>
+                <!-- ====================================Pending Section============================================================================================== -->
 
-                    <!-- Pickup Date Column -->
-                    <ng-container matColumnDef="date">
-                        <th mat-header-cell *matHeaderCellDef> Pickup Date </th>
-                        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-                    </ng-container>
+                <div *ngSwitchCase="'upcoming'" style="margin-top: 5px;">
 
-                    <!-- Pickup Time Column -->
-                    <ng-container matColumnDef="time">
-                        <th mat-header-cell *matHeaderCellDef> Pickup Time </th>
-                        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="redirectToDetails(row.id)">
-                    </tr>
-                </table>
+                    <table *ngIf="!loader" mat-table [dataSource]="pendingOrdersDataSource">
+
+                        <!-- Id Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Id </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <!-- Order Status Column -->
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                        </ng-container>
+
+                        <!-- Pickup Date Column -->
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> Pickup Date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                        </ng-container>
+
+                        <!-- Pickup Time Column -->
+                        <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef> Pickup Time </th>
+                            <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                            (click)="redirectToDetails(row.id)">
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- ====================================Completed Section============================================================================================== -->
+
+                <div *ngSwitchCase="'completed'" style="margin-top: 5px;">
+
+                    <table *ngIf="!loader" mat-table [dataSource]="completedOrdersDataSource">
+
+                        <!-- Id Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Id </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <!-- Order Status Column -->
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                        </ng-container>
+
+                        <!-- Pickup Date Column -->
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> Pickup Date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                        </ng-container>
+
+                        <!-- Pickup Time Column -->
+                        <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef> Pickup Time </th>
+                            <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                            (click)="redirectToDetails(row.id)">
+                        </tr>
+                    </table>
+                </div>
             </section>
 
 
