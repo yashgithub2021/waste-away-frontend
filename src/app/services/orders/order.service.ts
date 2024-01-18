@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
   providedIn: 'root'
 })
 export class OrderService {
-  url: String = "http://localhost:4000/api/order/"
+  url: String = "https://waste-away.onrender.com/api/order/"
   constructor(private http: HttpClient) { }
 
   // Place Pickup Order

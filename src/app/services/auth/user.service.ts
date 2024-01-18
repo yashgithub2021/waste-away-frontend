@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserService {
 
-  url: String = "http://localhost:4000/api/auth/";
+  url: String = "https://waste-away.onrender.com/api/auth/";
   Orderurl: String = "http://localhost:4000/api/order/"
 
   constructor(private http: HttpClient) { }
